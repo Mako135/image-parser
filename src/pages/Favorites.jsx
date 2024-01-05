@@ -10,7 +10,7 @@ const Favorites = () => {
   useEffect(() => {
     const storedFavorites = localStorage.getItem("favorites");
     if (storedFavorites) {
-      // Parse the stored favorites and filter out duplicates based on ID
+   
       const uniqueFavorites = Array.from(
         new Set(JSON.parse(storedFavorites).map((favorite) => favorite.id))
       ).map((id) =>
