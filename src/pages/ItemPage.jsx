@@ -46,14 +46,12 @@ export const ItemPage = () => {
       const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
       if (prevIsFavorite) {
-        // Remove the photo from favorites by filtering based on photo id
         const updatedFavorites = favorites.filter(
           (favorite) => favorite.id !== id
         );
         localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
       } else {
-        // Add the entire photo object to favorites
-        const photoToAdd = { id, ...photoData }; // Combine the photo id with the rest of the photo data
+        const photoToAdd = { id, ...photoData };
         localStorage.setItem(
           "favorites",
           JSON.stringify([...favorites, photoToAdd])
